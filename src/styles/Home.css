@@ -1,0 +1,15 @@
+.home {
+  margin: 0 100px 50px;
+}
+
+.logements-list {
+  padding: 56px 50px 43px;
+  background: #f6f6f6;
+  border-radius: 25px;
+  display: grid;
+  gap: 50px 60px;
+  grid-template-rows: 350px 350px;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  justify-items: center;
+}

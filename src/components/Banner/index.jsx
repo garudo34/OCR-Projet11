@@ -1,12 +1,11 @@
 import '../../styles/Banner.css'
-import Cover from '../../assets/background-home.png'
 
-function Banner() {
+function Banner(props) {
   return (
     <section className='banner'>
-      <img src={Cover} alt='Cover Home' />
+      <img src={props.cover} alt={props.altTextCover} />
       <div className='opaciter'></div>
-      <h1>Chez vous, partout et ailleurs</h1>
+      <h1>{props.mainText}</h1>
     </section>
   )
 }
