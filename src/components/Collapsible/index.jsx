@@ -7,9 +7,8 @@ function Collapsible({ open, children, title }) {
   const [isOpen, setIsOpen] = useState(open)
   const ref = useRef(null)
   const [height, setHeight] = useState(open ? undefined : 0)
-
   const handleFilterOpening = () => {
-    setIsOpen(prev => !prev)
+    setIsOpen((prev) => !prev)
   }
 
   useEffect(() => {
@@ -36,7 +35,11 @@ function Collapsible({ open, children, title }) {
           )}
         </button>
       </div>
-      {isOpen && <div className='collapse-content'>{children}</div>}
+      <div className='my-collapse' style={{ height }}>
+        <div ref={ref}>
+          <div className='collapse-content'>{children}</div>
+        </div>
+      </div>
     </div>
   )
 }
