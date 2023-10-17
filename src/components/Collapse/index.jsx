@@ -5,15 +5,15 @@ import { useState, useEffect, useRef } from 'react'
 
 function Collapse({ open, children, title, classname }) {
   const [isOpen, setIsOpen] = useState(open)
-  const ref = useRef(null)
+  const contentRef = useRef(null)
   const [height, setHeight] = useState(open ? undefined : 0)
-  const handleFilterOpening = () => {
-    setIsOpen((prev) => !prev)
+  const toggleContent = () => {
+    setIsOpen(!isOpen)
   }
 
   useEffect(() => {
     if (isOpen) {
-      setHeight(ref.current?.getBoundingClientRect().height)
+      setHeight(contentRef.current?.getBoundingClientRect().height)
     } else {
       setHeight(0)
     }
@@ -21,18 +21,18 @@ function Collapse({ open, children, title, classname }) {
 
   return (
     <div className={`collapse ${classname}`}>
-      <div className='collapse-header' onClick={handleFilterOpening}>
+      <div className='collapse-header' onClick={toggleContent}>
         <h2 className='collapse-title'>{title}</h2>
         <button type='button' className='collapse-toggle'>
-          {!isOpen ? (
-            <FontAwesomeIcon icon={faChevronDown} size='2x' />
-          ) : (
-            <FontAwesomeIcon icon={faChevronUp} size='2x' />
-          )}
+          <FontAwesomeIcon
+            icon={faChevronDown}
+            size='2x'
+            className={`${isOpen ? 'rotate-180' : 'rotate-0'}`}
+          />
         </button>
       </div>
       <div className='my-collapse' style={{ height }}>
-        <div ref={ref} className='collapse-content'>
+        <div ref={contentRef} className='collapse-content'>
           {Array.isArray(children) ? (
             <ul className='collapse-content-list'>
               {children.map((child, index) => (
