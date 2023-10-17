@@ -6,10 +6,10 @@ import Cover from '../../assets/background-about.png'
 function About() {
   document.title = 'A Propos - Kasa'
   return (
-    <div className='about'>
+    <main className='about'>
       <Hero cover={Cover} altTextCover={'Cover A Propos'} />
       <div className='collapse-wrapper'>
-        <Collapse open title='Fiabilité'>
+        <Collapse title='Fiabilité'>
           Les annonces postées sur Kasa garantissent une fiabilité totale. Les
           photos sont conformes aux logements, et toutes les informations sont
           régulièrement vérifiées par nos équipes.
@@ -33,7 +33,7 @@ function About() {
           sur la sécurité domestique pour nos hôtes.
         </Collapse>
       </div>
-    </div>
+    </main>
   )
 }
 export default About

@@ -46,7 +46,7 @@ function Logement() {
   const logementEquipments = logement && logement.equipments
 
   return (
-    <div className='logement'>
+    <main className='logement'>
       <div className='logement-carousel'>
         <Carousel pictures={logementPictures && logementPictures} />
       </div>
@@ -91,7 +91,7 @@ function Logement() {
           </Collapse>
         </div>
       </div>
-    </div>
+    </main>
   )
 }
 export default Logement

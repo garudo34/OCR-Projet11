@@ -19,7 +19,7 @@ function Home() {
   }, [])
 
   return (
-    <div className='home'>
+    <main className='home'>
       <Hero
         cover={Cover}
         altTextCover={'Cover Home'}
@@ -31,7 +31,7 @@ function Home() {
           <Cards key={id} id={id} title={title} cover={cover} />
         ))}
       </div>
-    </div>
+    </main>
   )
 }
 export default Home
