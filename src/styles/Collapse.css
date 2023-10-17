@@ -4,7 +4,6 @@
   align-items: flex-start;
   border-radius: 10px 10px 5px 5px;
   background-color: #f6f6f6;
-  width: 1023px;
 }
 
 .collapse-header {
@@ -19,6 +18,10 @@
   background-color: #ff6060;
 }
 
+.collapse.small .collapse-header {
+  padding: 10px 20px 10px 10px;
+}
+
 .collapse-header h2 {
   margin: 0;
   padding: 0;
@@ -29,7 +32,15 @@
   font-size: 24px;
   font-style: normal;
   font-weight: 500;
-  line-height: 142.6%; /* 34.224px */
+  line-height: 1em;
+}
+
+.collapse.small .collapse-title {
+  color: #fff;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1em;
 }
 
 .collapse-toggle {
@@ -37,8 +48,8 @@
   background-color: #ff6060;
   border: none;
   width: 32px;
-  height: 32p;
-  padding: 4px 10.29px 4px 8px;
+  height: 32px;
+  /* padding: 4px 10.29px 4px 8px; */
 }
 
 .collapse-content {
@@ -50,7 +61,9 @@
   text-align: left;
   color: #ff6060;
 }
-
+.collapse.small .collapse-content {
+  padding: 25px 28px 20px 20px;
+}
 .my-collapse {
   overflow: hidden;
   transition: height 0.5s ease-in-out;

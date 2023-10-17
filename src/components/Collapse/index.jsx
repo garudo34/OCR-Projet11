@@ -1,9 +1,9 @@
-import '../../styles/Collapsible.css'
+import '../../styles/Collapse.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronUp, faChevronDown } from '@fortawesome/free-solid-svg-icons'
 import { useState, useEffect, useRef } from 'react'
 
-function Collapsible({ open, children, title }) {
+function Collapse({ open, children, title, classname }) {
   const [isOpen, setIsOpen] = useState(open)
   const ref = useRef(null)
   const [height, setHeight] = useState(open ? undefined : 0)
@@ -20,7 +20,7 @@ function Collapsible({ open, children, title }) {
   }, [isOpen])
 
   return (
-    <div className='collapse'>
+    <div className={`collapse ${classname}`}>
       <div className='collapse-header'>
         <h2 className='collapse-title'>{title}</h2>
         <button
@@ -36,12 +36,25 @@ function Collapsible({ open, children, title }) {
         </button>
       </div>
       <div className='my-collapse' style={{ height }}>
-        <div ref={ref}>
-          <div className='collapse-content'>{children}</div>
+        <div ref={ref} className='collapse-content'>
+          {Array.isArray(children) ? (
+            <ul className='collapse-content-list'>
+              {children.map((child, index) => (
+                <li
+                  className='collapse-content-item'
+                  key={`item-collapse-${index}`}
+                >
+                  {child}
+                </li>
+              ))}
+            </ul>
+          ) : (
+            children
+          )}
         </div>
       </div>
     </div>
   )
 }
 
-export default Collapsible
+export default Collapse

@@ -1,15 +1,26 @@
-import Banner from '../../components/Banner'
+import Hero from '../../components/Hero'
 import Cards from '../../components/Cards'
 import '../../styles/Home.css'
-import { logements } from '../../data/logements'
+import { useState, useEffect } from 'react'
 import Cover from '../../assets/background-home.png'
 
 function Home() {
   document.title = 'Accueil - Kasa'
 
+  const [logements, setLogements] = useState([])
+
+  const handleFetchData = async () => {
+    const response = await fetch('data/logements.json')
+    const data = await response.json()
+    setLogements(data)
+  }
+  useEffect(() => {
+    handleFetchData()
+  }, [])
+
   return (
     <div className='home'>
-      <Banner
+      <Hero
         cover={Cover}
         altTextCover={'Cover Home'}
         mainText={'Chez vous, partout et ailleurs'}
