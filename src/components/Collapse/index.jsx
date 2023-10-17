@@ -21,13 +21,9 @@ function Collapse({ open, children, title, classname }) {
 
   return (
     <div className={`collapse ${classname}`}>
-      <div className='collapse-header'>
+      <div className='collapse-header' onClick={handleFilterOpening}>
         <h2 className='collapse-title'>{title}</h2>
-        <button
-          type='button'
-          className='collapse-toggle'
-          onClick={handleFilterOpening}
-        >
+        <button type='button' className='collapse-toggle'>
           {!isOpen ? (
             <FontAwesomeIcon icon={faChevronDown} size='2x' />
           ) : (
