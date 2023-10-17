@@ -33,23 +33,16 @@
   right: 2rem;
 }
 
-.indicators {
+.count {
   display: flex;
   position: absolute;
-  bottom: 1rem;
-}
-
-.indicator {
-  background-color: white;
-  height: 15px;
-  width: 15px;
-  border-radius: 100%;
-  border: none;
-  outline: none;
-  margin: 0 0.2rem;
-  cursor: pointer;
-}
-
-.indicator-inactive {
-  background-color: gray;
+  bottom: 2rem;
+  color: white;
+  text-align: center;
+  font-family: Montserrat;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 142.6%; /* 25.668px */
+  letter-spacing: -2px;
 }

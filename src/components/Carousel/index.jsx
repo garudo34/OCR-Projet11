@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import '../../styles/Carousel.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
@@ -8,7 +8,6 @@ import {
 
 function Carousel({ pictures }) {
   const [slide, setSlide] = useState(0)
-
   const length = pictures && pictures.length
 
   const handlePrevious = () => {
@@ -23,13 +22,6 @@ function Carousel({ pictures }) {
 
   return (
     <div className='carousel'>
-      <FontAwesomeIcon
-        icon={faChevronLeft}
-        className='arrow arrow-left'
-        size='6x'
-        onClick={handlePrevious}
-      />
-
       {pictures &&
         pictures.map((picture, index) => (
           <img
@@ -39,26 +31,26 @@ function Carousel({ pictures }) {
             className={slide === index ? 'slide' : 'slide slide-hidden'}
           />
         ))}
-      <FontAwesomeIcon
-        icon={faChevronRight}
-        className='arrow arrow-right'
-        size='6x'
-        onClick={handleNext}
-      />
-      <span className='indicators'>
-        {pictures &&
-          pictures.map((_, index) => {
-            return (
-              <button
-                key={index}
-                onClick={() => setSlide(index)}
-                className={
-                  slide === index ? 'indicator' : 'indicator indicator-inactive'
-                }
-              ></button>
-            )
-          })}
-      </span>
+
+      {length >= 2 ? (
+        <>
+          <FontAwesomeIcon
+            icon={faChevronLeft}
+            className='arrow arrow-left'
+            size='6x'
+            onClick={handlePrevious}
+          />
+          <FontAwesomeIcon
+            icon={faChevronRight}
+            className='arrow arrow-right'
+            size='6x'
+            onClick={handleNext}
+          />
+          <span className='count'>{`${slide + 1} / ${length}`}</span>
+        </>
+      ) : (
+        ''
+      )}
     </div>
   )
 }
