@@ -11,7 +11,7 @@ function Logement() {
   const navigate = useNavigate()
 
   const getData = () => {
-    fetch('../logements.json', {
+    fetch('/logements.json', {
       headers: {
         'Content-Type': 'application/json',
         Accept: 'application/json',
