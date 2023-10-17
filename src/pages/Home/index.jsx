@@ -10,7 +10,7 @@ function Home() {
   const [logements, setLogements] = useState([])
 
   const handleFetchData = async () => {
-    const response = await fetch('./data/logements.json')
+    const response = await fetch('/data/logements.json')
     const data = await response.json()
     setLogements(data)
   }
