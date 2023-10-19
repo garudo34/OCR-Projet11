@@ -31,7 +31,7 @@
   text-decoration-line: underline;
 }
 
-@media screen and (max-width: 576px) {
+@media screen and (max-width: 992px) {
   .header {
     margin: 20px 20px 27px 20px;
   }

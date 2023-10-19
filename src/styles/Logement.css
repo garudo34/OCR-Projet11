@@ -118,14 +118,14 @@ ul.logement-tags {
   flex-direction: row;
   justify-content: space-between;
   align-items: flex-start;
+  gap: 76px;
 }
 
-.logement-description,
-.logement-equipments {
-  width: 582px;
+.logement-collapse-elements > * {
+  flex: 1;
 }
 
-@media screen and (max-width: 576px) {
+@media screen and (max-width: 992px) {
   .logement {
     margin: 0 20px 27px;
   }
@@ -190,11 +190,7 @@ ul.logement-tags {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    align-items: stretch;
     gap: 20px;
-  }
-
-  .logement-description,
-  .logement-equipments {
-    width: 335px;
   }
 }

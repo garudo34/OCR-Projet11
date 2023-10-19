@@ -48,7 +48,6 @@
   background-color: #ff6060;
   border: none;
   font-size: 14px;
-  /* padding: 4px 10.29px 4px 8px; */
 }
 
 .collapse-content {
@@ -79,7 +78,7 @@
   transition: transform 0.6s;
 }
 
-@media screen and (max-width: 576px) {
+@media screen and (max-width: 992px) {
   .collapse {
     border-radius: 5px;
   }

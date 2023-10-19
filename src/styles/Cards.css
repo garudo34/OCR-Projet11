@@ -32,7 +32,7 @@
   line-height: 142.6%; /* 25.668px */
 }
 
-@media screen and (max-width: 576px) {
+@media screen and (max-width: 992px) {
   .logement-item {
     width: 335px;
     height: 255px;
