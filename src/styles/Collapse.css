@@ -19,7 +19,7 @@
 }
 
 .collapse.small .collapse-header {
-  padding: 10px 20px 10px 10px;
+  padding: 5px 10px;
 }
 
 .collapse-header h2 {
@@ -47,8 +47,6 @@
   color: #ffffff;
   background-color: #ff6060;
   border: none;
-  width: 32px;
-  height: 32px;
   font-size: 14px;
   /* padding: 4px 10.29px 4px 8px; */
 }
@@ -87,7 +85,7 @@
   }
 
   .collapse-header {
-    padding: 0 10px;
+    padding: 5px 10px;
   }
   .collapse-title {
     font-size: 13px;
@@ -100,5 +98,14 @@
 
   .collapse-content {
     font-size: 12px;
+  }
+
+  .collapse.small .collapse-title {
+    font-size: 13px;
+    line-height: 142.6%;
+  }
+
+  .collapse.small .collapse-content {
+    padding: 13px 20px 19px 20px;
   }
 }

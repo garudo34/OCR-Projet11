@@ -50,32 +50,33 @@ function Logement() {
       <div className='logement-carousel'>
         <Carousel pictures={logementPictures && logementPictures} />
       </div>
-      <div className='logement-firstline'>
-        <h2 className='logement-title'>{logementTitle}</h2>
-        <div className='logement-host'>
-          <div className='logement-host-name'>
-            {logementHostName && logementHostName}
-          </div>
-          <img
-            className='logement-host-picture'
-            src={logementHostPicture && logementHostPicture}
-            alt={logementHostPicture && logementHostPicture}
-          />
+      <div className='logement-informations'>
+        <div className='logement-firstgroup'>
+          <h2 className='logement-title'>{logementTitle}</h2>
+          <h3 className='logement-location'>{logementLocation}</h3>
+          <ul className='logement-tags'>
+            {logementTags &&
+              logementTags.map((tag, index) => (
+                <li className='logement-tag' key={`tag-${index}`}>
+                  {tag}
+                </li>
+              ))}
+          </ul>
         </div>
-      </div>
-      <h3 className='logement-location'>{logementLocation}</h3>
-      <div className='logement-tags-rating'>
-        <ul className='logement-tags'>
-          {logementTags &&
-            logementTags.map((tag, index) => (
-              <li className='logement-tag' key={`tag-${index}`}>
-                {tag}
-              </li>
-            ))}
-        </ul>
-
-        <div className='logement-rating'>
-          <Rating value={logementRating && parseInt(logementRating)} />
+        <div className='logement-secondgroup'>
+          <div className='logement-tags-rating'>
+            <Rating value={logementRating && parseInt(logementRating)} />
+          </div>
+          <div className='logement-host'>
+            <div className='logement-host-name'>
+              {logementHostName && logementHostName}
+            </div>
+            <img
+              className='logement-host-picture'
+              src={logementHostPicture && logementHostPicture}
+              alt={logementHostPicture && logementHostPicture}
+            />
+          </div>
         </div>
       </div>
 

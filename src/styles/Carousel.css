@@ -8,7 +8,7 @@
 }
 
 .slide {
-  border-radius: 0.5rem;
+  border-radius: 25px;
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -22,9 +22,11 @@
   position: absolute;
   color: white;
 }
+
 .arrow:hover {
   cursor: pointer;
 }
+
 .arrow-left {
   left: 2rem;
 }
@@ -45,4 +47,23 @@
   font-weight: 500;
   line-height: 142.6%; /* 25.668px */
   letter-spacing: -2px;
+}
+
+@media screen and (max-width: 576px) {
+  .carousel {
+    width: 335px;
+    height: 255px;
+  }
+
+  .slide {
+    border-radius: 10px;
+  }
+
+  .arrow {
+    font-size: 18px;
+  }
+
+  .count {
+    display: none;
+  }
 }
