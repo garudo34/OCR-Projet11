@@ -54,6 +54,7 @@ ul.logement-tags {
   list-style-type: none;
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   gap: 10px;
 }
 
@@ -125,7 +126,7 @@ ul.logement-tags {
   flex: 1;
 }
 
-@media screen and (max-width: 992px) {
+@media screen and (max-width: 768px) {
   .logement {
     margin: 0 20px 27px;
   }

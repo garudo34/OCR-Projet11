@@ -8,10 +8,9 @@
   border-radius: 25px;
   display: grid;
   gap: 50px 60px;
-  grid-template-rows: 350px 350px;
-  grid-template-columns: repeat(3, 1fr);
-  align-items: center;
-  justify-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 @media screen and (max-width: 992px) {
@@ -20,8 +19,6 @@
   }
 
   .logements-list {
-    display: flex;
-    flex-direction: column;
     gap: 20px;
     background: none;
     padding: 0;
