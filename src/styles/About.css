@@ -16,3 +16,14 @@
   gap: 30px;
   width: 1023px;
 }
+
+@media screen and (max-width: 576px) {
+  .about {
+    margin: 0 20px 27px;
+  }
+
+  .collapse-wrapper {
+    gap: 20px;
+    width: 335px;
+  }
+}
